@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BEE COUTURE | أناقة تُحاكيك</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           ROOT
+        ========================= */
+
+        :root {
+            --cream: #f8f5ef;
+            --ivory: #fffdf9;
+            --brown: #62472e;
+            --brown-dark: #3d2b1c;
+            --honey: #9a7448;
+            --gold: #b08a57;
+            --line: #e7ded1;
+            --white: #ffffff;
+            --muted: #887b6c;
+
+            --radius: 18px;
+            --shadow: 0 15px 45px rgba(72, 49, 28, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Cairo", sans-serif;
+            background: var(--ivory);
+            color: var(--brown-dark);
+            overflow-x: hidden;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================
+           ANNOUNCEMENT
+        ========================= */
+
+        .announcement {
+            background: var(--brown-dark);
+            color: #fff;
+            text-align: center;
+            padding: 9px 20px;
+            font-size: 12px;
+            letter-spacing: .7px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,253,249,.94);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(98,71,46,.08);
+        }
+
+         .header-inner {
+    max-width: 1400px;
+    margin: auto;
+    height: 90px;
+    padding: 0 35px;
+
+    display: grid;
+    grid-template-columns: 1fr 180px 1fr;
+    align-items: center;
+}
+
+.logo-link {
+    width: 180px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 125px;
+    height: 75px;
+    object-fit: contain;
+    display: block;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 28px;
+    font-size: 13px;
+    color: var(--brown);
+}
+
+.header-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+       .logo {
+    width: 120px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+    justify-self: center;
+}
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            font-size: 13px;
+            color: var(--brown);
+        }
+
+        .nav a {
+            position: relative;
+            transition: .3s;
+        }
+
+        .nav a::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -7px;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: .3s;
+        }
+
+        .nav a:hover {
+            color: var(--gold);
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+        .icon-btn {
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--line);
+            background: transparent;
+            border-radius: 50%;
+            cursor: pointer;
+            color: var(--brown);
+            display: grid;
+            place-items: center;
+            transition: .3s;
+            position: relative;
+        }
+
+        .icon-btn:hover {
+            background: var(--brown);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -4px;
+            left: -2px;
+            width: 18px;
+            height: 18px;
+            background: var(--gold);
+            color: white;
+            border-radius: 50%;
+            font-size: 10px;
+            display: grid;
+            place-items: center;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(49,34,21,.78),
+                    rgba(49,34,21,.15)
+                ),
+                url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            width: 100%;
+            margin: auto;
+            padding: 70px 8%;
+        }
+
+        .hero-small {
+            font-size: 12px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            opacity: .9;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(55px, 8vw, 105px);
+            font-weight: 500;
+            line-height: .95;
+            margin-bottom: 22px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            max-width: 470px;
+            line-height: 2;
+            opacity: .9;
+            margin-bottom: 35px;
+        }
+
+        .primary-btn {
+            border: none;
+            background: var(--gold);
+            color: white;
+            padding: 15px 35px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .primary-btn:hover {
+            background: white;
+            color: var(--brown-dark);
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            max-width: 1400px;
+            margin: auto;
+            padding: 110px 35px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 45px;
+            font-weight: 500;
+            color: var(--brown-dark);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            margin-top: 12px;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CATEGORIES
+        ========================= */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .category {
+            height: 420px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: var(--radius);
+            background: #eee;
+        }
+
+        .category img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s ease;
+        }
+
+        .category:hover img {
+            transform: scale(1.06);
+        }
+
+        .category::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                transparent 35%,
+                rgba(34,24,17,.8)
+            );
+        }
+
+        .category-content {
+            position: absolute;
+            bottom: 28px;
+            right: 28px;
+            left: 28px;
+            z-index: 2;
+            color: white;
+        }
+
+        .category-content span {
+            font-size: 11px;
+            opacity: .75;
+        }
+
+        .category-content h3 {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 3px 0 12px;
+        }
+
+        .category-content a {
+            font-size: 12px;
+            border-bottom: 1px solid rgba(255,255,255,.6);
+            padding-bottom: 4px;
+        }
+
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .product-tools {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 45px;
+        }
+
+        .filter-btn {
+            border: 1px solid var(--line);
+            background: transparent;
+            color: var(--brown);
+            padding: 10px 22px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: .3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--brown);
+            color: white;
+            border-color: var(--brown);
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .product {
+            position: relative;
+            background: white;
+            border: 1px solid #eee6da;
+            transition: .4s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .product-image {
+            height: 480px;
+            overflow: hidden;
+            position: relative;
+            background: #f3efe8;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .6s;
+        }
+
+        .product:hover .product-image img {
+            transform: scale(1.04);
+        }
+
+        .wishlist {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+            border: none;
+
+            background: rgba(255,255,255,.92);
+            cursor: pointer;
+
+            color: var(--brown);
+            font-size: 18px;
+
+            z-index: 5;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--brown);
+            color: white;
+            padding: 6px 12px;
+            font-size: 10px;
+            z-index: 5;
+        }
+
+        .product-info {
+            padding: 22px;
+        }
+
+        .product-category {
+            color: var(--gold);
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .product-info h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 7px 0;
+        }
+
+        .product-description {
+            color: var(--muted);
+            font-size: 11px;
+            margin-bottom: 15px;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--brown-dark);
+            font-size: 15px;
+        }
+
+        .add-cart {
+            background: transparent;
+            border: 1px solid var(--brown);
+            color: var(--brown);
+            padding: 8px 13px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .add-cart:hover {
+            background: var(--brown);
+            color: white;
+        }
+
+
+        /* =========================
+           BRAND STORY
+        ========================= */
+
+        .story {
+            background: var(--cream);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 550px;
+        }
+
+        .story-image {
+            background:
+                url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=85")
+                center / cover;
+        }
+
+        .story-content {
+            padding: 90px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .story-content .bee {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .story-content h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 48px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .story-content p {
+            max-width: 500px;
+            color: var(--muted);
+            line-height: 2.2;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           NEWSLETTER
+        ========================= */
+
+        .newsletter {
+            text-align: center;
+            padding: 100px 20px;
+            background: var(--brown-dark);
+            color: white;
+        }
+
+        .newsletter h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 42px;
+            font-weight: 500;
+        }
+
+        .newsletter p {
+            opacity: .7;
+            margin: 12px 0 30px;
+            font-size: 13px;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            background: white;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 15px;
+            direction: rtl;
+        }
+
+        .newsletter-form button {
+            border: none;
+            background: var(--gold);
+            color: white;
+            padding: 0 25px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #2b1e14;
+            color: white;
+            padding: 70px 35px 25px;
+        }
+
+        .footer-inner {
+            max-width: 1300px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-logo {
+            width: 130px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 20px;
+        }
+
+        footer h4 {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        footer a,
+        footer p {
+            color: rgba(255,255,255,.6);
+            font-size: 12px;
+            display: block;
+            margin-bottom: 11px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1300px;
+            margin: 50px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.1);
+            color: rgba(255,255,255,.4);
+            font-size: 10px;
+            text-align: center;
+        }
+
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(30,20,13,.65);
+            z-index: 3000;
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-box {
+            background: var(--ivory);
+            width: min(900px, 100%);
+            max-height: 90vh;
+            overflow: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            position: relative;
+        }
+
+        .modal-image {
+            min-height: 600px;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-info {
+            padding: 60px 45px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+
+            border: none;
+            background: white;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+            cursor: pointer;
+
+            z-index: 10;
+        }
+
+        .modal-info h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 38px;
+            font-weight: 500;
+            margin: 12px 0;
+        }
+
+        .modal-info p {
+            color: var(--muted);
+            line-height: 2;
+            font-size: 13px;
+            margin: 20px 0;
+        }
+
+        .modal-price {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--brown);
+            margin-bottom: 25px;
+        }
+
+        .sizes {
+            display: flex;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .size {
+            border: 1px solid var(--line);
+            padding: 8px 15px;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        .size.selected {
+            background: var(--brown);
+            color: white;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+
+            .header-inner {
+                grid-template-columns: auto 1fr auto;
+                padding: 0 18px;
+                height: 75px;
+            }
+
+            .logo {
+                width: 120px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: grid;
+            }
+
+            .header-actions {
+                justify-content: flex-end;
+            }
+
+            .hero {
+                min-height: 600px;
+                background-position: 65% center;
+            }
+
+            .hero-content {
+                padding: 50px 25px;
+            }
+
+            .categories {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .products {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .product-image {
+                height: 380px;
+            }
+
+            .story {
+                grid-template-columns: 1fr;
+            }
+
+            .story-image {
+                height: 450px;
+            }
+
+            .story-content {
+                padding: 60px 30px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .announcement {
+                font-size: 10px;
+            }
+
+            .header-inner {
+                grid-template-columns: auto 1fr auto;
+            }
+
+            .icon-btn {
+                width: 37px;
+                height: 37px;
+            }
+
+            .hero {
+                min-height: 570px;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
+
+            .section {
+                padding: 75px 18px;
+            }
+
+            .section-heading h2 {
+                font-size: 34px;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .category {
+                height: 380px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 500px;
+            }
+
+            .story-content h2 {
+                font-size: 38px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form button {
+                padding: 14px;
+            }
+
+            .modal-box {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-image {
+                min-height: 350px;
+                max-height: 400px;
+            }
+
+            .modal-info {
+                padding: 35px 25px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         ANNOUNCEMENT
+    ========================= -->
+
+    <div class="announcement">
+        شحن مجاني للطلبات التي تتجاوز ٥٠٠ ر.س
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+   <header>
+    <div class="header-inner">
+
+        <!-- القائمة -->
+        <nav class="nav">
+            <a href="#home">الرئيسية</a>
+            <a href="#categories">المجموعات</a>
+            <a href="#products">المتجر</a>
+            <a href="#story">قصتنا</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
+
+        <!-- الشعار -->
+        <a href="#home" class="logo-link">
+            <img
+                src="logo.jpg"
+                class="logo"
+                alt="BEE COUTURE"
+            >
+        </a>
+
+        <!-- الأدوات -->
+        <div class="header-actions">
+
+            <button class="icon-btn" title="البحث">
+                ⌕
+            </button>
+
+            <button
+                class="icon-btn"
+                onclick="openCart()"
+                title="السلة"
+            >
+                🛍
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </div>
+</header>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="hero-small">
+                    BEE COUTURE
+                </div>
+
+                <h1>
+                    أناقة<br>
+                    تُحاكيك
+                </h1>
+
+                <p>
+                    قطع مختارة بعناية لتصنع لكِ حضوراً
+                    لا يُنسى، بتفاصيل فاخرة وتصاميم
+                    تعكس أسلوبك الخاص.
+                </p>
+
+                <a
+                    href="#products"
+                    class="primary-btn"
+                >
+                    تسوقي الآن
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CATEGORIES
+        ========================= -->
+
+        <section class="section" id="categories">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    DISCOVER YOUR STYLE
+                </div>
+
+                <h2>
+                    اختاري عالمك
+                </h2>
+
+                <p>
+                    اكتشفي تشكيلتنا المختارة لكل مناسبة وموسم
+                </p>
+
+            </div>
+
+
+            <div class="categories">
+
+                <article
+                    class="category"
+                    onclick="filterProducts('summer')"
+                >
+
+                    <img
+                        src="summer.jpg"
+                        alt="الملابس الصيفية"
+                    >
+
+                    <div class="category-content">
+
+                        <span>01 / COLLECTION</span>
+
+                        <h3>
+                            الملابس الصيفية
+                        </h3>
+
+                        <a>
+                            اكتشفي المجموعة ←
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="category"
+                    onclick="filterProducts('winter')"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?auto=format&fit=crop&w=900&q=85"
+                        alt="الملابس الشتوية"
+                    >
+
+                    <div class="category-content">
+
+                        <span>02 / COLLECTION</span>
+
+                        <h3>
+                            الملابس الشتوية
+                        </h3>
+
+                        <a>
+                            اكتشفي المجموعة ←
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="category"
+                    onclick="filterProducts('evening')"
+                >
+
+                    <img
+                        src="fustan.jpg"
+                        alt="فساتين السهرة"
+                    >
+
+                    <div class="category-content">
+
+                        <span>03 / COLLECTION</span>
+
+                        <h3>
+                            فساتين السهرة
+                        </h3>
+
+                        <a>
+                            اكتشفي المجموعة ←
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="category"
+                    onclick="filterProducts('casual')"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=85"
+                        alt="الكاجوال"
+                    >
+
+                    <div class="category-content">
+
+                        <span>04 / COLLECTION</span>
+
+                        <h3>
+                            الملابس الكاجوال
+                        </h3>
+
+                        <a>
+                            اكتشفي المجموعة ←
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="category"
+                    onclick="filterProducts('abaya')"
+                >
+
+                    <img
+                        src="images.jpg"
+                        alt="العبايات"
+                    >
+
+                    <div class="category-content">
+
+                        <span>05 / COLLECTION</span>
+
+                        <h3>
+                            العبايات
+                        </h3>
+
+                        <a>
+                            اكتشفي المجموعة ←
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article
+                    class="category"
+                    onclick="filterProducts('formal')"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=85"
+                        alt="الإطلالات الرسمية"
+                    >
+
+                    <div class="category-content">
+
+                        <span>06 / COLLECTION</span>
+
+                        <h3>
+                            الإطلالات الرسمية
+                        </h3>
+
+                        <a>
+                            اكتشفي المجموعة ←
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PRODUCTS
+        ========================= -->
+
+        <section class="section" id="products">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    BEE COUTURE EDIT
+                </div>
+
+                <h2>
+                    مختاراتنا
+                </h2>
+
+                <p>
+                    قطع صُممت لتكون جزءاً من قصتك
+                </p>
+
+            </div>
+
+
+            <div class="product-tools">
+
+                <button
+                    class="filter-btn active"
+                    onclick="filterProducts('all', this)"
+                >
+                    الكل
+                </button>
+
+                <button
+                    class="filter-btn"
+                    onclick="filterProducts('summer', this)"
+                >
+                    صيفي
+                </button>
+
+                <button
+                    class="filter-btn"
+                    onclick="filterProducts('winter', this)"
+                >
+                    شتوي
+                </button>
+
+                <button
+                    class="filter-btn"
+                    onclick="filterProducts('evening', this)"
+                >
+                    سهرة
+                </button>
+
+                <button
+                    class="filter-btn"
+                    onclick="filterProducts('casual', this)"
+                >
+                    كاجوال
+                </button>
+
+                <button
+                    class="filter-btn"
+                    onclick="filterProducts('abaya', this)"
+                >
+                    عبايات
+                </button>
+
+                <button
+                    class="filter-btn"
+                    onclick="filterProducts('formal', this)"
+                >
+                    رسمي
+                </button>
+
+            </div>
+
+
+            <div class="products" id="productGrid">
+
+
+                <!-- PRODUCT 1 -->
+
+                <article
+                    class="product"
+                    data-category="summer"
+                    data-name="فستان لورا الصيفي"
+                    data-price="490"
+                    data-description="فستان صيفي انسيابي بخامة خفيفة وقصة أنيقة تناسب إطلالات النهار والمناسبات البسيطة."
+                    data-image="summer.jpg"
+                >
+
+                    <div class="product-image">
+
+                        <span class="badge">
+                            جديد
+                        </span>
+
+                        <button class="wishlist">
+                            ♡
+                        </button>
+
+                        <img
+                            src="summer.jpg"
+                            alt="فستان لورا"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            SUMMER EDIT
+                        </span>
+
+                        <h3>
+                            فستان لورا
+                        </h3>
+
+                        <p class="product-description">
+                            فستان صيفي انسيابي بتفاصيل ناعمة
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                ٤٩٠ ر.س
+                            </span>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart(this)"
+                            >
+                                أضيفي للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 2 -->
+
+                <article
+                    class="product"
+                    data-category="winter"
+                    data-name="معطف إيڤا"
+                    data-price="690"
+                    data-description="معطف شتوي بقصة مستقيمة وخامة دافئة، مصمم لإطلالة راقية في الأيام الباردة."
+                    data-image="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?auto=format&fit=crop&w=900&q=90"
+                >
+
+                    <div class="product-image">
+
+                        <button class="wishlist">
+                            ♡
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?auto=format&fit=crop&w=900&q=90"
+                            alt="معطف إيفا"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            WINTER EDIT
+                        </span>
+
+                        <h3>
+                            معطف إيڤا
+                        </h3>
+
+                        <p class="product-description">
+                            معطف شتوي بقصة راقية وخامة دافئة
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                ٦٩٠ ر.س
+                            </span>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart(this)"
+                            >
+                                أضيفي للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 3 -->
+
+                <article
+                    class="product"
+                    data-category="evening"
+                    data-name="فستان إليانا"
+                    data-price="890"
+                    data-description="فستان سهرة بتصميم أنثوي راقٍ وتفاصيل تمنح الإطلالة حضوراً استثنائياً."
+                    data-image="fustan.jpg"
+                >
+
+                    <div class="product-image">
+
+                        <span class="badge">
+                            الأكثر مبيعاً
+                        </span>
+
+                        <button class="wishlist">
+                            ♡
+                        </button>
+
+                        <img
+                            src="fustan.jpg"
+                            alt="فستان إليانا"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            EVENING EDIT
+                        </span>
+
+                        <h3>
+                            فستان إليانا
+                        </h3>
+
+                        <p class="product-description">
+                            فستان سهرة بتفاصيل فاخرة
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                ٨٩٠ ر.س
+                            </span>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart(this)"
+                            >
+                                أضيفي للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 4 -->
+
+                <article
+                    class="product"
+                    data-category="casual"
+                    data-name="طقم ميرا"
+                    data-price="420"
+                    data-description="طقم كاجوال راقٍ يجمع الراحة مع التفاصيل العصرية، مناسب للإطلالات اليومية."
+                    data-image="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=90"
+                >
+
+                    <div class="product-image">
+
+                        <button class="wishlist">
+                            ♡
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=90"
+                            alt="طقم ميرا"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            CASUAL EDIT
+                        </span>
+
+                        <h3>
+                            طقم ميرا
+                        </h3>
+
+                        <p class="product-description">
+                            كاجوال راقٍ لإطلالة يومية مميزة
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                ٤٢٠ ر.س
+                            </span>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart(this)"
+                            >
+                                أضيفي للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 5 -->
+
+                <article
+                    class="product"
+                    data-category="abaya"
+                    data-name="عباية نوف"
+                    data-price="590"
+                    data-description="عباية بتصميم عصري هادئ مع تفاصيل دقيقة تمنحها مظهراً فاخراً وعملياً."
+                    data-image="images.jpg"
+                >
+
+                    <div class="product-image">
+
+                        <span class="badge">
+                            BEE EDIT
+                        </span>
+
+                        <button class="wishlist">
+                            ♡
+                        </button>
+
+                        <img
+                            src="images.jpg"
+                            alt="عباية نوف"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            ABAYA EDIT
+                        </span>
+
+                        <h3>
+                            عباية نوف
+                        </h3>
+
+                        <p class="product-description">
+                            عباية عصرية بتفاصيل فاخرة
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                ٥٩٠ ر.س
+                            </span>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart(this)"
+                            >
+                                أضيفي للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 6 -->
+
+                <article
+                    class="product"
+                    data-category="formal"
+                    data-name="بدلة لورين"
+                    data-price="790"
+                    data-description="بدلة نسائية أنيقة بقصة مفصلة بعناية، مثالية للاجتماعات والمناسبات الرسمية."
+                    data-image="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90"
+                >
+
+                    <div class="product-image">
+
+                        <button class="wishlist">
+                            ♡
+                        </button>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90"
+                            alt="بدلة لورين"
+                        >
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <span class="product-category">
+                            FORMAL EDIT
+                        </span>
+
+                        <h3>
+                            بدلة لورين
+                        </h3>
+
+                        <p class="product-description">
+                            إطلالة رسمية بقصة عصرية أنيقة
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <span class="price">
+                                ٧٩٠ ر.س
+                            </span>
+
+                            <button
+                                class="add-cart"
+                                onclick="addToCart(this)"
+                            >
+                                أضيفي للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STORY
+        ========================= -->
+
+        <section class="story" id="story">
+
+            <div class="story-image"></div>
+
+            <div class="story-content">
+
+                <div class="bee">
+                    🐝
+                </div>
+
+                <div class="eyebrow">
+                    OUR PHILOSOPHY
+                </div>
+
+                <h2>
+                    لأن الأناقة<br>
+                    في التفاصيل
+                </h2>
+
+                <p>
+                    في BEE COUTURE نؤمن أن القطعة المثالية
+                    ليست مجرد ملابس، بل إحساس كامل.
+                    لذلك نختار كل تصميم بعناية، من الخامة
+                    إلى أدق التفاصيل، لنقدم لكِ تجربة
+                    تجمع بين الفخامة والبساطة.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NEWSLETTER
+        ========================= -->
+
+        <section class="newsletter">
+
+            <div class="eyebrow">
+                JOIN THE BEE CIRCLE
+            </div>
+
+            <h2>
+                كوني أول من يعرف
+            </h2>
+
+            <p>
+                اشتركي للحصول على آخر التشكيلات والعروض الخاصة.
+            </p>
+
+            <form
+                class="newsletter-form"
+                onsubmit="subscribe(event)"
+            >
+
+                <input
+                    type="email"
+                    placeholder="بريدك الإلكتروني"
+                    required
+                >
+
+                <button>
+                    اشتراك
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer id="contact">
+
+        <div class="footer-inner">
+
+            <div>
+
+                <img
+                    src="logo.png"
+                    class="footer-logo"
+                    alt="BEE COUTURE"
+                >
+
+                <p>
+                    فخامة هادئة، تفاصيل تُحاكيك.
+                </p>
+
+                <p>
+                    متجر أزياء سعودي بإطلالة مختلفة.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    المتجر
+                </h4>
+
+                <a href="#products">
+                    جميع المنتجات
+                </a>
+
+                <a href="#categories">
+                    المجموعات
+                </a>
+
+                <a href="#">
+                    الجديد
+                </a>
+
+                <a href="#">
+                    الأكثر مبيعاً
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    خدمة العملاء
+                </h4>
+
+                <a href="#">
+                    الشحن والتوصيل
+                </a>
+
+                <a href="#">
+                    الاستبدال والاسترجاع
+                </a>
+
+                <a href="#">
+                    الأسئلة الشائعة
+                </a>
+
+                <a href="#">
+                    تواصلي معنا
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    تابعينا
+                </h4>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    TikTok
+                </a>
+
+                <a href="#">
+                    Snapchat
+                </a>
+
+                <a href="#">
+                    X
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            © 2026 BEE COUTURE — جميع الحقوق محفوظة
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         PRODUCT MODAL
+    ========================= -->
+
+    <div
+        class="modal"
+        id="productModal"
+        onclick="closeModal(event)"
+    >
+
+        <div class="modal-box">
+
+            <button
+                class="close"
+                onclick="closeProductModal()"
+            >
+                ×
+            </button>
+
+            <div class="modal-image">
+
+                <img
+                    id="modalImage"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+            <div class="modal-info">
+
+                <div class="eyebrow">
+                    BEE COUTURE
+                </div>
+
+                <h2 id="modalName">
+                    اسم المنتج
+                </h2>
+
+                <div
+                    class="modal-price"
+                    id="modalPrice"
+                >
+                    ٠ ر.س
+                </div>
+
+                <p id="modalDescription"></p>
+
+                <strong>
+                    المقاس
+                </strong>
+
+                <div class="sizes">
+
+                    <button class="size">
+                        XS
+                    </button>
+
+                    <button class="size selected">
+                        S
+                    </button>
+
+                    <button class="size">
+                        M
+                    </button>
+
+                    <button class="size">
+                        L
+                    </button>
+
+                    <button class="size">
+                        XL
+                    </button>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    style="width:100%; margin-top:15px"
+                    onclick="addModalProduct()"
+                >
+                    أضيفي للسلة
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* =========================
+           CART
+        ========================= */
+
+        let cart = [];
+
+        let currentProduct = null;
+
+
+        function updateCart() {
+
+            document.getElementById("cartCount").textContent =
+                cart.length;
+
+        }
+
+
+        function addToCart(button) {
+
+            const product = button.closest(".product");
+
+            const name =
+                product.dataset.name;
+
+            const price =
+                product.dataset.price;
+
+            cart.push({
+                name,
+                price
+            });
+
+            updateCart();
+
+            button.textContent = "تمت الإضافة ✓";
+
+            button.style.background = "#62472e";
+            button.style.color = "#fff";
+
+            setTimeout(() => {
+
+                button.textContent =
+                    "أضيفي للسلة";
+
+                button.style.background =
+                    "transparent";
+
+                button.style.color =
+                    "#62472e";
+
+            }, 1500);
+
+        }
+
+
+        function openCart() {
+
+            if (cart.length === 0) {
+
+                alert("السلة فارغة حالياً 🛍");
+
+                return;
+
+            }
+
+            let message =
+                "منتجات السلة:\n\n";
+
+            cart.forEach((item, index) => {
+
+                message +=
+                    `${index + 1}. ${item.name} — ${item.price} ر.س\n`;
+
+            });
+
+            alert(message);
+
+        }
+
+
+        /* =========================
+           PRODUCT FILTER
+        ========================= */
+
+        function filterProducts(category, clickedButton) {
+
+            const products =
+                document.querySelectorAll(".product");
+
+            products.forEach(product => {
+
+                if (
+                    category === "all" ||
+                    product.dataset.category === category
+                ) {
+
+                    product.style.display =
+                        "block";
+
+                } else {
+
+                    product.style.display =
+                        "none";
+
+                }
+
+            });
+
+
+            if (clickedButton) {
+
+                document
+                    .querySelectorAll(".filter-btn")
+                    .forEach(btn =>
+                        btn.classList.remove("active")
+                    );
+
+                clickedButton.classList.add("active");
+
+            }
+
+            document
+                .getElementById("products")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+        /* =========================
+           PRODUCT DETAILS
+        ========================= */
+
+        document
+            .querySelectorAll(".product")
+            .forEach(product => {
+
+                product.addEventListener(
+                    "click",
+                    function(event) {
+
+                        if (
+                            event.target.closest(
+                                ".add-cart"
+                            ) ||
+                            event.target.closest(
+                                ".wishlist"
+                            )
+                        ) {
+                            return;
+                        }
+
+                        currentProduct =
+                            product;
+
+                        document.getElementById(
+                            "modalImage"
+                        ).src =
+                            product.dataset.image;
+
+                        document.getElementById(
+                            "modalName"
+                        ).textContent =
+                            product.dataset.name;
+
+                        document.getElementById(
+                            "modalPrice"
+                        ).textContent =
+                            Number(
+                                product.dataset.price
+                            ).toLocaleString(
+                                "ar-SA"
+                            ) + " ر.س";
+
+                        document.getElementById(
+                            "modalDescription"
+                        ).textContent =
+                            product.dataset.description;
+
+                        document
+                            .getElementById(
+                                "productModal"
+                            )
+                            .classList.add("show");
+
+                    }
+                );
+
+            });
+
+
+        function closeProductModal() {
+
+            document
+                .getElementById(
+                    "productModal"
+                )
+                .classList.remove("show");
+
+        }
+
+
+        function closeModal(event) {
+
+            if (
+                event.target.id ===
+                "productModal"
+            ) {
+
+                closeProductModal();
+
+            }
+
+        }
+
+
+        function addModalProduct() {
+
+            if (!currentProduct)
+                return;
+
+            cart.push({
+
+                name:
+                    currentProduct.dataset.name,
+
+                price:
+                    currentProduct.dataset.price
+
+            });
+
+            updateCart();
+
+            closeProductModal();
+
+            alert(
+                "تمت إضافة المنتج إلى السلة ✓"
+            );
+
+        }
+
+
+        /* =========================
+           SIZES
+        ========================= */
+
+        document
+            .querySelectorAll(".size")
+            .forEach(size => {
+
+                size.addEventListener(
+                    "click",
+                    function() {
+
+                        document
+                            .querySelectorAll(
+                                ".size"
+                            )
+                            .forEach(s =>
+                                s.classList.remove(
+                                    "selected"
+                                )
+                            );
+
+                        this.classList.add(
+                            "selected"
+                        );
+
+                    }
+                );
+
+            });
+
+
+        /* =========================
+           WISHLIST
+        ========================= */
+
+        document
+            .querySelectorAll(".wishlist")
+            .forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    function(event) {
+
+                        event.stopPropagation();
+
+                        if (
+                            this.textContent.trim()
+                            === "♡"
+                        ) {
+
+                            this.textContent =
+                                "♥";
+
+                        } else {
+
+                            this.textContent =
+                                "♡";
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+        /* =========================
+           NEWSLETTER
+        ========================= */
+
+        function subscribe(event) {
+
+            event.preventDefault();
+
+            alert(
+                "تم تسجيل بريدك بنجاح ✨"
+            );
+
+            event.target.reset();
+
+        }
+
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+
+        document
+            .querySelector(".mobile-menu")
+            .addEventListener(
+                "click",
+                function() {
+
+                    alert(
+                        "الرئيسية\nالمجموعات\nالمتجر\nقصتنا\nتواصل معنا"
+                    );
+
+                }
+            );
+
+
+        /* =========================
+           INITIAL
+        ========================= */
+
+        updateCart();
+
+    </script>
+
+</body>
+</html>
