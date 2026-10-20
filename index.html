@@ -386,7 +386,216 @@
             padding-bottom: 4px;
         }
 
+/* =========================
+   BRANDS
+========================= */
 
+.brands-section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 100px 35px;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.brand-card {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #eee8df;
+}
+
+.brand-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .7s ease;
+}
+
+.brand-card:hover img {
+    transform: scale(1.07);
+}
+
+.brand-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(40, 27, 17, .86)
+        );
+}
+
+.brand-overlay {
+    position: absolute;
+    bottom: 30px;
+    right: 28px;
+    left: 28px;
+    z-index: 2;
+    color: white;
+}
+
+.brand-overlay span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: .7;
+}
+
+.brand-overlay h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 35px;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.brand-overlay p {
+    font-size: 11px;
+    opacity: .8;
+}
+
+
+/* =========================
+   BRAND PRODUCTS
+========================= */
+
+.brand-products-section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 80px 35px 110px;
+    display: none;
+}
+
+.brand-products-section.show {
+    display: block;
+}
+
+.brand-products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.brand-product {
+    background: white;
+    border: 1px solid #eee6da;
+    transition: .4s;
+}
+
+.brand-product:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+}
+
+.brand-product-image {
+    height: 460px;
+    overflow: hidden;
+    position: relative;
+}
+
+.brand-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .6s;
+}
+
+.brand-product:hover img {
+    transform: scale(1.04);
+}
+
+.brand-product-info {
+    padding: 22px;
+}
+
+.brand-name {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.brand-product-info h3 {
+    font-size: 17px;
+    margin: 7px 0;
+}
+
+.brand-product-info p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.brand-product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.brand-price {
+    font-weight: bold;
+    color: var(--brown-dark);
+}
+
+.brand-add {
+    background: var(--brown);
+    color: white;
+    border: none;
+    padding: 9px 15px;
+    cursor: pointer;
+    font-size: 11px;
+    transition: .3s;
+}
+
+.brand-add:hover {
+    background: var(--gold);
+}
+
+
+/* =========================
+   RESPONSIVE BRANDS
+========================= */
+
+@media (max-width: 1000px) {
+
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brand-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .brands-section {
+        padding: 70px 18px;
+    }
+
+    .brands-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-card {
+        height: 430px;
+    }
+
+    .brand-products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-product-image {
+        height: 500px;
+    }
+
+}
         /* =========================
            PRODUCTS
         ========================= */
@@ -1029,640 +1238,185 @@
         </section>
 
 
-        <!-- =========================
-             CATEGORIES
-        ========================= -->
+       <!-- =========================
+     BRANDS
+========================= -->
 
-        <section class="section" id="categories">
+<section class="brands-section" id="brands">
 
-            <div class="section-heading">
+    <div class="section-heading">
 
-                <div class="eyebrow">
-                    DISCOVER YOUR STYLE
-                </div>
+        <div class="eyebrow">
+            WORLD OF FASHION
+        </div>
 
-                <h2>
-                    اختاري عالمك
-                </h2>
+        <h2>
+            اكتشفي البراندات
+        </h2>
+
+        <p>
+            اختاري البراند المفضل لديكِ واكتشفي تشكيلته
+        </p>
+
+    </div>
+
+
+    <div class="brands-grid">
+
+        <!-- ZARA -->
+        <article
+            class="brand-card"
+            onclick="showBrand('zara')"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85"
+                alt="ZARA"
+            >
+
+            <div class="brand-overlay">
+
+                <span>01 / BRAND</span>
+
+                <h3>
+                    ZARA
+                </h3>
 
                 <p>
-                    اكتشفي تشكيلتنا المختارة لكل مناسبة وموسم
+                    اكتشفي المجموعة
                 </p>
 
             </div>
 
-
-            <div class="categories">
-
-                <article
-                    class="category"
-                    onclick="filterProducts('summer')"
-                >
-
-                    <img
-                        src="summer.jpg"
-                        alt="الملابس الصيفية"
-                    >
-
-                    <div class="category-content">
-
-                        <span>01 / COLLECTION</span>
-
-                        <h3>
-                            الملابس الصيفية
-                        </h3>
-
-                        <a>
-                            اكتشفي المجموعة ←
-                        </a>
-
-                    </div>
-
-                </article>
+        </article>
 
 
-                <article
-                    class="category"
-                    onclick="filterProducts('winter')"
-                >
+        <!-- DIOR -->
+        <article
+            class="brand-card"
+            onclick="showBrand('dior')"
+        >
 
-                    <img
-                        src="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?auto=format&fit=crop&w=900&q=85"
-                        alt="الملابس الشتوية"
-                    >
+            <img
+                src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=85"
+                alt="DIOR"
+            >
 
-                    <div class="category-content">
+            <div class="brand-overlay">
 
-                        <span>02 / COLLECTION</span>
+                <span>02 / BRAND</span>
 
-                        <h3>
-                            الملابس الشتوية
-                        </h3>
-
-                        <a>
-                            اكتشفي المجموعة ←
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article
-                    class="category"
-                    onclick="filterProducts('evening')"
-                >
-
-                    <img
-                        src="fustan.jpg"
-                        alt="فساتين السهرة"
-                    >
-
-                    <div class="category-content">
-
-                        <span>03 / COLLECTION</span>
-
-                        <h3>
-                            فساتين السهرة
-                        </h3>
-
-                        <a>
-                            اكتشفي المجموعة ←
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article
-                    class="category"
-                    onclick="filterProducts('casual')"
-                >
-
-                    <img
-                        src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=85"
-                        alt="الكاجوال"
-                    >
-
-                    <div class="category-content">
-
-                        <span>04 / COLLECTION</span>
-
-                        <h3>
-                            الملابس الكاجوال
-                        </h3>
-
-                        <a>
-                            اكتشفي المجموعة ←
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article
-                    class="category"
-                    onclick="filterProducts('abaya')"
-                >
-
-                    <img
-                        src="images.jpg"
-                        alt="العبايات"
-                    >
-
-                    <div class="category-content">
-
-                        <span>05 / COLLECTION</span>
-
-                        <h3>
-                            العبايات
-                        </h3>
-
-                        <a>
-                            اكتشفي المجموعة ←
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article
-                    class="category"
-                    onclick="filterProducts('formal')"
-                >
-
-                    <img
-                        src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=85"
-                        alt="الإطلالات الرسمية"
-                    >
-
-                    <div class="category-content">
-
-                        <span>06 / COLLECTION</span>
-
-                        <h3>
-                            الإطلالات الرسمية
-                        </h3>
-
-                        <a>
-                            اكتشفي المجموعة ←
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PRODUCTS
-        ========================= -->
-
-        <section class="section" id="products">
-
-            <div class="section-heading">
-
-                <div class="eyebrow">
-                    BEE COUTURE EDIT
-                </div>
-
-                <h2>
-                    مختاراتنا
-                </h2>
+                <h3>
+                    DIOR
+                </h3>
 
                 <p>
-                    قطع صُممت لتكون جزءاً من قصتك
+                    اكتشفي المجموعة
                 </p>
 
             </div>
 
+        </article>
 
-            <div class="product-tools">
 
-                <button
-                    class="filter-btn active"
-                    onclick="filterProducts('all', this)"
-                >
-                    الكل
-                </button>
+        <!-- H&M -->
+        <article
+            class="brand-card"
+            onclick="showBrand('hm')"
+        >
 
-                <button
-                    class="filter-btn"
-                    onclick="filterProducts('summer', this)"
-                >
-                    صيفي
-                </button>
+            <img
+                src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=85"
+                alt="H&M"
+            >
 
-                <button
-                    class="filter-btn"
-                    onclick="filterProducts('winter', this)"
-                >
-                    شتوي
-                </button>
+            <div class="brand-overlay">
 
-                <button
-                    class="filter-btn"
-                    onclick="filterProducts('evening', this)"
-                >
-                    سهرة
-                </button>
+                <span>03 / BRAND</span>
 
-                <button
-                    class="filter-btn"
-                    onclick="filterProducts('casual', this)"
-                >
-                    كاجوال
-                </button>
+                <h3>
+                    H&M
+                </h3>
 
-                <button
-                    class="filter-btn"
-                    onclick="filterProducts('abaya', this)"
-                >
-                    عبايات
-                </button>
-
-                <button
-                    class="filter-btn"
-                    onclick="filterProducts('formal', this)"
-                >
-                    رسمي
-                </button>
+                <p>
+                    اكتشفي المجموعة
+                </p>
 
             </div>
 
+        </article>
 
-            <div class="products" id="productGrid">
 
+        <!-- MIHYAR -->
+        <article
+            class="brand-card"
+            onclick="showBrand('mihyar')"
+        >
 
-                <!-- PRODUCT 1 -->
+            <img
+                src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=85"
+                alt="مهيار"
+            >
 
-                <article
-                    class="product"
-                    data-category="summer"
-                    data-name="فستان لورا الصيفي"
-                    data-price="490"
-                    data-description="فستان صيفي انسيابي بخامة خفيفة وقصة أنيقة تناسب إطلالات النهار والمناسبات البسيطة."
-                    data-image="summer.jpg"
-                >
+            <div class="brand-overlay">
 
-                    <div class="product-image">
+                <span>04 / BRAND</span>
 
-                        <span class="badge">
-                            جديد
-                        </span>
+                <h3>
+                    مهيار
+                </h3>
 
-                        <button class="wishlist">
-                            ♡
-                        </button>
-
-                        <img
-                            src="summer.jpg"
-                            alt="فستان لورا"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            SUMMER EDIT
-                        </span>
-
-                        <h3>
-                            فستان لورا
-                        </h3>
-
-                        <p class="product-description">
-                            فستان صيفي انسيابي بتفاصيل ناعمة
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <span class="price">
-                                ٤٩٠ ر.س
-                            </span>
-
-                            <button
-                                class="add-cart"
-                                onclick="addToCart(this)"
-                            >
-                                أضيفي للسلة
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 2 -->
-
-                <article
-                    class="product"
-                    data-category="winter"
-                    data-name="معطف إيڤا"
-                    data-price="690"
-                    data-description="معطف شتوي بقصة مستقيمة وخامة دافئة، مصمم لإطلالة راقية في الأيام الباردة."
-                    data-image="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?auto=format&fit=crop&w=900&q=90"
-                >
-
-                    <div class="product-image">
-
-                        <button class="wishlist">
-                            ♡
-                        </button>
-
-                        <img
-                            src="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?auto=format&fit=crop&w=900&q=90"
-                            alt="معطف إيفا"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            WINTER EDIT
-                        </span>
-
-                        <h3>
-                            معطف إيڤا
-                        </h3>
-
-                        <p class="product-description">
-                            معطف شتوي بقصة راقية وخامة دافئة
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <span class="price">
-                                ٦٩٠ ر.س
-                            </span>
-
-                            <button
-                                class="add-cart"
-                                onclick="addToCart(this)"
-                            >
-                                أضيفي للسلة
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 3 -->
-
-                <article
-                    class="product"
-                    data-category="evening"
-                    data-name="فستان إليانا"
-                    data-price="890"
-                    data-description="فستان سهرة بتصميم أنثوي راقٍ وتفاصيل تمنح الإطلالة حضوراً استثنائياً."
-                    data-image="fustan.jpg"
-                >
-
-                    <div class="product-image">
-
-                        <span class="badge">
-                            الأكثر مبيعاً
-                        </span>
-
-                        <button class="wishlist">
-                            ♡
-                        </button>
-
-                        <img
-                            src="fustan.jpg"
-                            alt="فستان إليانا"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            EVENING EDIT
-                        </span>
-
-                        <h3>
-                            فستان إليانا
-                        </h3>
-
-                        <p class="product-description">
-                            فستان سهرة بتفاصيل فاخرة
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <span class="price">
-                                ٨٩٠ ر.س
-                            </span>
-
-                            <button
-                                class="add-cart"
-                                onclick="addToCart(this)"
-                            >
-                                أضيفي للسلة
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 4 -->
-
-                <article
-                    class="product"
-                    data-category="casual"
-                    data-name="طقم ميرا"
-                    data-price="420"
-                    data-description="طقم كاجوال راقٍ يجمع الراحة مع التفاصيل العصرية، مناسب للإطلالات اليومية."
-                    data-image="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=90"
-                >
-
-                    <div class="product-image">
-
-                        <button class="wishlist">
-                            ♡
-                        </button>
-
-                        <img
-                            src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=90"
-                            alt="طقم ميرا"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            CASUAL EDIT
-                        </span>
-
-                        <h3>
-                            طقم ميرا
-                        </h3>
-
-                        <p class="product-description">
-                            كاجوال راقٍ لإطلالة يومية مميزة
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <span class="price">
-                                ٤٢٠ ر.س
-                            </span>
-
-                            <button
-                                class="add-cart"
-                                onclick="addToCart(this)"
-                            >
-                                أضيفي للسلة
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 5 -->
-
-                <article
-                    class="product"
-                    data-category="abaya"
-                    data-name="عباية نوف"
-                    data-price="590"
-                    data-description="عباية بتصميم عصري هادئ مع تفاصيل دقيقة تمنحها مظهراً فاخراً وعملياً."
-                    data-image="images.jpg"
-                >
-
-                    <div class="product-image">
-
-                        <span class="badge">
-                            BEE EDIT
-                        </span>
-
-                        <button class="wishlist">
-                            ♡
-                        </button>
-
-                        <img
-                            src="images.jpg"
-                            alt="عباية نوف"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            ABAYA EDIT
-                        </span>
-
-                        <h3>
-                            عباية نوف
-                        </h3>
-
-                        <p class="product-description">
-                            عباية عصرية بتفاصيل فاخرة
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <span class="price">
-                                ٥٩٠ ر.س
-                            </span>
-
-                            <button
-                                class="add-cart"
-                                onclick="addToCart(this)"
-                            >
-                                أضيفي للسلة
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 6 -->
-
-                <article
-                    class="product"
-                    data-category="formal"
-                    data-name="بدلة لورين"
-                    data-price="790"
-                    data-description="بدلة نسائية أنيقة بقصة مفصلة بعناية، مثالية للاجتماعات والمناسبات الرسمية."
-                    data-image="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90"
-                >
-
-                    <div class="product-image">
-
-                        <button class="wishlist">
-                            ♡
-                        </button>
-
-                        <img
-                            src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90"
-                            alt="بدلة لورين"
-                        >
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <span class="product-category">
-                            FORMAL EDIT
-                        </span>
-
-                        <h3>
-                            بدلة لورين
-                        </h3>
-
-                        <p class="product-description">
-                            إطلالة رسمية بقصة عصرية أنيقة
-                        </p>
-
-                        <div class="product-bottom">
-
-                            <span class="price">
-                                ٧٩٠ ر.س
-                            </span>
-
-                            <button
-                                class="add-cart"
-                                onclick="addToCart(this)"
-                            >
-                                أضيفي للسلة
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
+                <p>
+                    اكتشفي المجموعة
+                </p>
 
             </div>
 
-        </section>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BRAND PRODUCTS
+========================= -->
+
+<section
+    class="brand-products-section"
+    id="brandProducts"
+>
+
+    <div class="section-heading">
+
+        <div class="eyebrow" id="brandEyebrow">
+            BEE COUTURE
+        </div>
+
+        <h2 id="brandTitle">
+            اختاري براند
+        </h2>
+
+        <p id="brandDescription">
+            اضغطي على أحد البراندات لاكتشاف منتجاته
+        </p>
+
+    </div>
+
+
+    <div
+        class="brand-products-grid"
+        id="brandProductsGrid"
+    >
+
+        <!-- المنتجات تظهر هنا بالجافاسكربت -->
+
+    </div>
+
+</section>
+
+
 
 
         <!-- =========================
@@ -2074,7 +1828,260 @@
 
         }
 
+        /* =========================
+           BRANDS
+        ========================= */
 
+        const brandData = {
+
+            zara: {
+                name: "ZARA",
+                description: "اكتشفي أحدث القطع والإطلالات من ZARA",
+
+                products: [
+                    {
+                        name: "فستان ZARA الكلاسيكي",
+                        price: "399",
+                        description: "فستان أنيق بقصة عصرية وتفاصيل ناعمة.",
+                        image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=90"
+                    },
+
+                    {
+                        name: "جاكيت ZARA",
+                        price: "499",
+                        description: "جاكيت بقصة أنيقة يناسب الإطلالات اليومية.",
+                        image: "jacket.jpg"
+                    },
+
+                    {
+                        name: "طقم ZARA",
+                        price: "599",
+                        description: "طقم عصري يجمع بين البساطة والفخامة.",
+                        image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=90"
+                    }
+                ]
+            },
+
+
+            dior: {
+                name: "DIOR",
+                description: "مجموعة مختارة بإلهام من أناقة DIOR",
+
+                products: [
+                    {
+                        name: "فستان DIOR",
+                        price: "1890",
+                        description: "تصميم فاخر بإطلالة راقية للمناسبات.",
+                        image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=90"
+                    },
+
+                    {
+                        name: "جاكيت DIOR",
+                        price: "2490",
+                        description: "جاكيت فاخر بتفاصيل أنيقة.",
+                        image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90"
+                    },
+
+                    {
+                        name: "إطلالة DIOR",
+                        price: "2990",
+                        description: "إطلالة متكاملة بتصميم أنيق وحضور مميز.",
+                        image: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=90"
+                    }
+                ]
+            },
+
+
+            hm: {
+                name: "H&M",
+                description: "قطع عصرية بأسلوب يومي مريح",
+
+                products: [
+                    {
+                        name: "فستان H&M",
+                        price: "199",
+                        description: "فستان عملي وخفيف للإطلالات اليومية.",
+                        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=90"
+                    },
+
+                    {
+                        name: "قميص H&M",
+                        price: "149",
+                        description: "قميص بتصميم بسيط وسهل التنسيق.",
+                        image: "shirt.jpg"
+                    },
+
+                    {
+                        name: "طقم H&M",
+                        price: "299",
+                        description: "طقم كاجوال مريح وأنيق.",
+                        image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=90"
+                    }
+                ]
+            },
+
+
+            mihyar: {
+                name: "مهيار",
+                description: "اختيارات أنيقة من مجموعة مهيار",
+
+                products: [
+                    {
+                        name: "ثوب مهيار",
+                        price: "690",
+                        description: "تصميم فاخر بتفاصيل أنيقة وحضور مميز.",
+                        image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=90"
+                    },
+
+                    {
+                        name: "إطلالة مهيار",
+                        price: "790",
+                        description: "إطلالة راقية مناسبة للمناسبات الخاصة.",
+                        image: "https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=900&q=90"
+                    },
+
+                    {
+                        name: "جاكيت مهيار",
+                        price: "590",
+                        description: "جاكيت أنيق بقصة فاخرة وعصرية.",
+                        image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=90"
+                    }
+                ]
+            }
+
+        };
+
+
+        /* =========================
+           SHOW BRAND
+        ========================= */
+
+        function showBrand(brand) {
+
+            const data = brandData[brand];
+
+            if (!data) return;
+
+            const section =
+                document.getElementById("brandProducts");
+
+            const title =
+                document.getElementById("brandTitle");
+
+            const description =
+                document.getElementById("brandDescription");
+
+            const eyebrow =
+                document.getElementById("brandEyebrow");
+
+            const grid =
+                document.getElementById("brandProductsGrid");
+
+
+            title.textContent = data.name;
+
+            description.textContent =
+                data.description;
+
+            eyebrow.textContent =
+                data.name + " / COLLECTION";
+
+
+            grid.innerHTML = "";
+
+
+            data.products.forEach(product => {
+
+                const card =
+                    document.createElement("article");
+
+                card.className =
+                    "brand-product";
+
+
+                card.innerHTML = `
+
+                    <div class="brand-product-image">
+
+                        <img
+                            src="${product.image}"
+                            alt="${product.name}"
+                        >
+
+                    </div>
+
+
+                    <div class="brand-product-info">
+
+                        <span class="brand-name">
+                            ${data.name}
+                        </span>
+
+                        <h3>
+                            ${product.name}
+                        </h3>
+
+                        <p>
+                            ${product.description}
+                        </p>
+
+
+                        <div class="brand-product-bottom">
+
+                            <span class="brand-price">
+                                ${Number(product.price).toLocaleString("ar-SA")} ر.س
+                            </span>
+
+                            <button
+                                class="brand-add"
+                                onclick="addBrandProduct('${product.name}', '${product.price}')"
+                            >
+                                أضيفي للسلة
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+
+                grid.appendChild(card);
+
+            });
+
+
+            section.classList.add("show");
+
+
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+
+        /* =========================
+           ADD BRAND PRODUCT TO CART
+        ========================= */
+
+        function addBrandProduct(name, price) {
+
+            cart.push({
+                name: name,
+                price: price
+            });
+
+            updateCart();
+
+            alert(
+                "تمت إضافة " +
+                name +
+                " إلى السلة ✓"
+            );
+
+        }
         /* =========================
            PRODUCT DETAILS
         ========================= */
